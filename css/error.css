@@ -1,0 +1,16 @@
+.header{
+    margin-top: 150px;
+    margin-left: -500px;
+    font-size: 100px;
+    text-align: center;
+}
+
+.message{
+    margin-top: 150px;
+    margin-left: 50px;
+    font-size: 30px;
+}
+
+.main_body{
+    height: 500px;
+}

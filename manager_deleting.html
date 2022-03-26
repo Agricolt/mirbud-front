@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/stylekoszyk.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vue-toast-notification/dist/theme-sugar.css"
+      rel="stylesheet"
+    />
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- axios -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"
+      integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- VueToast -->
+	<script src="https://cdn.jsdelivr.net/npm/vue-toast-notification@0.6/dist/index.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/vue-toast-notification@0.6/dist/theme-sugar.css" rel="stylesheet">
+    <title>Panel admina</title>
+  </head>
+  <body>
+    <section class="container content-section">
+      <div class="cart-row">
+        <span class="cart-price cart-header cart-column">Imie Nazwisko</span>
+        <span class="cart-price cart-header cart-column">E-mail</span>
+        <span class="cart-price cart-header cart-column">Numer telefonu</span>
+        <span class="cart-price cart-header cart-column">Miejscowść</span>
+        <span class="cart-price cart-header cart-column">Usuń</span>
+      </div>
+      <ul class="manager-list">
+        <manager
+          v-for="mg in managers"
+          v-bind:key="mg.id"
+          v-bind:manager_name="mg.imie"
+          v-bind:manager_surname="mg.nazwisko"
+          v-bind:manager_email="mg.email"
+          v-bind:manager_id="mg.id"
+          v-bind:manager_number="mg.nrTelefonu"
+          v-bind:manager_city="mg.miejscowosc"
+        ></manager>
+      </ul>
+    </section>
+    <script src="js/manager_component.js"></script>
+
+    <script src="js/manager_deleting.js"></script>
+  </body>
+</html>

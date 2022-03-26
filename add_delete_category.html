@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vue-toast-notification/dist/theme-sugar.css"
+      rel="stylesheet"
+    />
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- axios -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"
+      integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- VueToast -->
+    <script src="https://cdn.jsdelivr.net/npm/vue-toast-notification@0.6/dist/index.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/vue-toast-notification@0.6/dist/theme-sugar.css"
+      rel="stylesheet"
+    />
+    <title>Rejestracja</title>
+  </head>
+  <body>
+    <div id="app">
+      <label for="dost_kategorie"><b>Dostępne kategorie:</b></label>
+      <span
+        v-for="kategoria in dostepne_kategorie"
+        :key="kategoria.nazwaKategorii"
+      >
+        {{kategoria.nazwaKategorii}},
+      </span>
+      <p></p>
+      <input
+        class="reg_log_input"
+        type="text"
+        name="dodaj_kategoria"
+        id="dodaj_kategoria"
+        v-model="dodaj_kategoria"
+        required
+      />
+
+      <div style="display: flex; padding: 5px">
+        <button @click="addNewCategory" class="registerbtnupdate">Dodaj</button>
+        <button @click="deleteCategory" class="registerbtnupdate">Usuń</button>
+      </div>
+    </div>
+    <script src="js/add_delete_category.js"></script>
+  </body>
+</html>

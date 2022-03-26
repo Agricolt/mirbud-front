@@ -1,0 +1,317 @@
+
+/* Navbar styling*/
+
+*{
+	font-family: Verdana;
+}
+
+body{
+	margin: 0px;
+}
+
+.nav_bar{
+	overflow: auto;
+	background-color: orange;
+}
+
+.logo{
+	float: left;
+	background-color: white;
+	width: 150px;
+	height: 150px;
+	margin-left: 50px;
+}
+.cart{
+	width: 50px;
+	height: 50px;
+	float: right;
+	margin-right: 20px;
+	background-color: blanchedalmond;
+	padding: 8px 8px 8px 8px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: darkgray;
+}
+
+.cart {
+	transition-duration: 0.4s;
+  }
+  
+.cart:hover {
+	background-color: darkorange;
+	color: white;
+}
+
+
+.user{
+	text-align: left;
+}
+
+.nav_bar_cart_and_user{
+	float: right;
+	margin-right: 40px;
+	margin-top: -10px;
+}
+
+.login_btn{
+	float: right;
+  	background: #f1f1f1;
+  	padding: 5px 5px 5px 5px;
+  	margin-right: 35px;
+  	margin-top: 7px;
+	border: solid 1px black;
+}
+
+.logout_btn{
+	float: right;
+  	background: #f1f1f1;
+  	padding: 5px 5px 5px 5px;
+  	margin-right: 35px;
+  	margin-top: 7px;
+	border: solid 1px black;
+}
+.search_bar{
+	margin-left: 20%;
+	margin-right: auto;
+	margin-top: 50px;
+	float: left;
+}
+
+.search_bar_admin{
+	display: flex;
+	margin-top: 50px;
+	margin-right: 100px;
+	float: left;
+}
+
+.search_bar input{
+	height: 40px;
+	width: 400px;
+	text-align: left;
+	padding-left: 20px;
+	font-size: 20px;
+}
+
+
+
+/* Categories bar */
+
+.categories_bar li{
+	display: inline;
+	padding-right: 20px;
+}
+
+.categories_bar a:hover{
+	text-decoration: underline;
+}
+
+.categories_bar a{
+	color: black;
+	text-decoration: none;
+}
+
+.categories_bar li:after{
+	content: '|';
+	padding-left: 15px;
+	padding-right: 0px;
+}
+
+.categories_bar li:last-child:after{
+	content: none;
+}
+
+.categories_bar{
+	box-shadow: 0px 1px grey;
+	text-align: center;
+	font-weight: bold;
+	margin: auto;
+  	background-color: #d9dada;
+  	overflow: auto;
+}
+
+/* Main body index */
+
+.recommended_items{
+	overflow: auto;
+	margin-left: 20px;
+}
+
+.main_body .main_img{
+	margin-top: 20px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	width: 60%;
+}
+
+
+.recommended_item img{
+	width: 200px;
+	height: 200px;
+}
+
+.recommended_items ul{
+	display: inline;
+	list-style: none;
+}
+.recommended_items .recommended_item{
+	float: left;
+	margin-right: 50px;
+	margin-left: 50px;
+}
+
+.recommended_items{
+	overflow: hidden;
+}
+
+.recommended_item .add_to_cart{
+	width: 45px;
+	height: 35px;
+	float: left;
+	margin-top: -8px;
+	margin-bottom: 4px;
+}
+
+.add_to_cart_box p {
+	font-size: 12px;
+}
+
+.add_to_cart_button {
+	background-color: white;
+	width: 170px;
+	border-radius: 12px;
+}
+
+.add_to_cart_button:hover{
+	background-color: sandybrown;
+}
+
+.loader {
+	border: 16px solid #f3f3f3; /* Light grey */
+	border-top: 16px solid #3498db; /* Blue */
+	border-radius: 50%;
+	width: 110px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+	overflow: hidden;
+  }
+  
+  @keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+  }
+
+  .center{
+	margin-left: auto;
+	margin-right: auto;
+	width: 120px;
+  }
+
+  a {
+	  color: coral;
+	  text-decoration: none;
+  }
+
+
+  a:hover{
+	  color: orange;
+	  text-decoration: underline;
+  }
+
+/* Footer */
+
+.footer{
+	border-top: solid 1px;
+	height: auto;
+	background-color: orange;
+	overflow: auto;
+}
+
+.footer_admin{
+	position: absolute;
+	bottom: 0;
+	height: auto;
+	background-color: orange;
+	overflow: auto;
+}
+.cookies_info{
+	font-size: 12px;
+	float: right;	/* nie wiem jakim chujem to dziala ale to sprawia ze info jest pod kontaktem */
+	margin-left: 15px;
+}
+
+.contact{
+	font-size: 14px;
+}
+
+.contact_element{
+	float: left;
+	margin-right: 30px;
+	margin-left: 15px;
+}
+
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* Full-width input fields */
+input.reg_log_input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px -15px;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input.reg_log_input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+  background-color: orange;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 560px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+}
+
+.registerbtnupdate {
+	background-color: orange;
+	color: white;
+	padding: 16px 20px;
+	margin: 5px;
+	text-align: center;
+	float: left;
+	border: none;
+	cursor: pointer;
+	width: 10%;
+  }
+
+  .adminbtns {
+	display: flex;
+	background-color: orange;
+	color: black;
+	padding: 16px 20px;
+	margin: 8px;
+	text-align: center;
+	border: black;
+	cursor: pointer;
+	width: 20%;
+  }
+
+
+/* Add a blue text color to links */
+.links {
+  color: orange;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */

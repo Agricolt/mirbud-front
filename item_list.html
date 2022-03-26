@@ -1,0 +1,91 @@
+<!doctype HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Sklep Budowlany MirBud</title>
+	<!-- Vue.js -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- axios -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js" integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!-- VueToast -->
+	<script src="https://cdn.jsdelivr.net/npm/vue-toast-notification@0.6/dist/index.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/vue-toast-notification@0.6/dist/theme-sugar.css" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="css/style_item_list.css">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+	<div id="navbar"></div>
+    <script src="js/navbar.js"></script>
+	<div class="main_body">
+		<ul class="filter_bar">
+			<category-checkbox
+			v-for="category in categories"
+			v-bind:category="category.nazwaKategorii"
+			v-bind:category_id="category.id"
+			></category-checkbox>
+			<input @click="filter" class="filtr_btn" type="submit" value="Filtruj" name="filter_btn">
+		</ul>
+		<div class="item_bar">
+			<div class="loader_indicator">
+				<h4 class="center">Ładowanie przedmiotów...</h4>
+				<div class="loader center"></div>
+			</div>
+			<ul class="item_list" id="lista">
+				<displayed-item
+				v-for="item in viewedItems"
+				v-bind:class="'item ' + 'item' + item.id"
+				v-bind:item_photo_url="item.zdjecia"
+				v-bind:item_name="item.nazwa"
+				v-bind:item_price="item.cenaSprzedazy"
+				v-bind:item_rating="item.ocena"
+				v-bind:item_id="item.id"
+				></displayed-item>
+			</ul>
+			<div class="center">
+				<div class="pagination">
+					<a href="javascript:void(0)" v-on:click="clickForward">Pokaż więcej</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="contact">
+			<p class="contact_element">
+				Tel: <br>
+				<b>123-456-789</b>
+			</p>
+			<p class="contact_element">
+				E-mail:<br>
+				<b>tab@Mirbud.pl</b>
+			</p>
+			<p class="contact_element">
+				Adres:<br>
+				<b>Abc 12<br></b>
+                <b>12-345, ABC<br></b>
+                <b>Polska</b>
+			</p>
+		</div>
+		<p class="cookies_info">
+			W ramach naszej witryny stosujemy pliki cookies w celu świadczenia Państwu usług na najwyższym poziomie, w
+			tym w sposób dostosowany do indywidualnych potrzeb. Korzystanie z witryny bez zmiany ustawień dotyczących
+			cookies oznacza, że będą one zamieszczane w Państwa urządzeniu końcowym. Możecie Państwo dokonać w każdym
+			czasie zmiany ustawień dotyczących cookies.
+		</p>
+	</div>
+	<!-- Item list instance -->
+	<script type="text/javascript" src="js/item_list.js"></script>
+	<!-- Displayed item component -->
+	<script type="text/javascript" src="js/item_component.js"></script>
+	<!-- Category Checkbox -->
+	<script type="text/javascript" src="js/category_checkbox_component.js"></script>
+	<!-- Logging script -->
+	<script src="js/logging_script.js"></script>
+</body>
+
+</html>

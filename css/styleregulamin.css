@@ -1,0 +1,29 @@
+p{
+	font-size: 16px;
+	font-family:Helvetica;
+    text-align: left;
+    position: relative;
+    margin-left:  300px;
+    margin-right: 300px;
+   
+
+}
+
+
+h2{
+	font-size: 30px;
+	text-align: center;
+	font-family:Helvetica;
+
+}
+
+ol{
+	font-size: 16px;
+	font-family:Helvetica;
+	margin-left:  300px;
+    margin-right: 300px;
+}
+
+.link{
+	color: orange;
+}

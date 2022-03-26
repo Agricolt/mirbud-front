@@ -1,0 +1,97 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Sklep Budowlany MirBud</title>
+
+	<!-- Vue.js -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- axios -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js" integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<link rel="stylesheet" type="text/css" href="css/error.css">
+</head>
+
+<body>
+	<div class="nav_bar">
+		<a href="index.html"><img src="img/logo_small.png" class="logo"></a>
+		<form class="search_bar">
+			<input type="text" id="fsearch" name="fsearch" placeholder="Wpisz szukany przedmiot...">
+		</form>
+
+		<div class="nav_bar_cart_and_user">
+			<div class="user">
+				<h4>Zalogowany użytkownik: {{user_name}}</h4>
+			</div>
+			<div class="cart_all">
+				<a href="koszyk.html"><img src="img/cart.png" class="cart"> </a>
+			</div>
+			<a href="logowanie.html">
+				<button class="login_btn" type="button">
+					Zaloguj/Zarejestruj się
+				</button>
+			</a>
+		</div>
+	</div>
+	<div class="categories_bar">
+		<ul>
+			<li>
+				<a href="item_list.html?category=Budowanie">Budowanie</a>
+			</li>
+			<li>
+				<a href="item_list.html?category=Ogród">Ogród i wypoczynek</a>
+			</li>
+			<li>
+				<a href="item_list.html?category=Technika">Technika</a>
+			</li>
+			<li>
+				<a href="item_list.html?category=Mieszkanie">Mieszkanie</a>
+			</li>
+			<li>
+				<a href="item_list.html?category=Kuchnia">Kuchnia</a>
+			</li>
+			<li>
+				<a href="item_list.html?category=Lazienka">Lazienka</a>
+			</li>
+			<li>
+				<a href="item_list.html?category=Elektronika">Elektronika</a>
+			</li>
+		</ul>
+	</div>
+	<div class="main_body">
+		<h1 class="header">Ups! Coś poszło nie tak!</h1>
+		<h2 class="message">{{message}}</h2>
+	</div>
+    <div class="footer">
+		<div class="contact">
+			<p class="contact_element">
+				Tel: <br>
+				<b>123-456-789</b>
+			</p>
+			<p class="contact_element">
+				E-mail:<br>
+				<b>tab@Mirbud.pl</b>
+			</p>
+			<p class="contact_element">
+				Adres:<br>
+				<b>Abc 12<br></b>
+				<b>12-345, ABC<br></b>
+				<b>Polska</b>
+			</p>
+		</div>
+		<p class="cookies_info">
+			W ramach naszej witryny stosujemy pliki cookies w celu świadczenia Państwu usług na najwyższym poziomie, w
+			tym w sposób dostosowany do indywidualnych potrzeb. Korzystanie z witryny bez zmiany ustawień dotyczących
+			cookies oznacza, że będą one zamieszczane w Państwa urządzeniu końcowym. Możecie Państwo dokonać w każdym
+			czasie zmiany ustawień dotyczących cookies.
+		</p>
+		<script src="js/error.js"></script>
+		<!-- Logging script -->
+		<script src="js/logging_script.js"></script>
+	</div>
+</body>
+
+</html>

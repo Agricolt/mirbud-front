@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vue-toast-notification/dist/theme-sugar.css"
+      rel="stylesheet"
+    />
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- axios -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"
+      integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- VueToast -->
+	<script src="https://cdn.jsdelivr.net/npm/vue-toast-notification@0.6/dist/index.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/vue-toast-notification@0.6/dist/theme-sugar.css" rel="stylesheet">
+    <title>Modyfing</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <h1>Przedmiot ID: {{item.id}}</h1>
+
+        <hr />
+        <label for="nazwa"><b>Nazwa</b></label>
+        <input
+          class="reg_log_input"
+          type="text"
+          placeholder="Nazwa"
+          name="item.nazwa"
+          id="nazwa"
+          v-model="item.nazwa"
+          required
+        />
+        <label for="opis"><b>Opis</b></label>
+        <input
+          class="reg_log_input"
+          type="text"
+          placeholder="Opis"
+          name="item.opis"
+          id="opis"
+          v-model="item.opis"
+          required
+        />
+        <label for="cenaSprzedazy"><b>Cena sprzedaży</b></label>
+        <input
+          class="reg_log_input"
+          type="number"
+          placeholder="Cena sprzedaży"
+          name="item.cenaSprzedazy"
+          id="cenaSprzedazy"
+          v-model="item.cenaSprzedazy"
+          required
+        />
+        zł
+        <p></p>
+        <label for="iloscNaMagazynie"><b>Ilość na magazynie</b></label>
+        <input
+          class="reg_log_input"
+          type="number"
+          placeholder="Ilość na magazynie"
+          name="item.iloscNaMagazynie"
+          id="iloscNaMagazynie"
+          v-model="item.iloscNaMagazynie"
+          required
+        />
+        szt.
+        <p></p>
+        <label for="czyArchiwalny"><b>Czy archiwalny</b></label>
+        <input
+          class="reg_log_input"
+          type="checkbox"
+          name="item.czyArchiwalny"
+          id="czyArchiwalny"
+          v-model="item.czyArchiwalny"
+          required
+        />
+        <p></p>
+        <div style="display: flex">
+          <button @click="update" class="registerbtnupdate">Zapisz</button>
+        </div>
+
+        <p></p>
+
+        <label for="kategorie_przed"><b>Kategorie przedmiotu:</b></label>
+        <span
+          v-for="kategoria in przedmiot_kategorie"
+          :key="kategoria.nazwaKategorii"
+        >
+          {{kategoria}}
+        </span>
+        <p></p>
+        <label for="kategorie"><b>Kategorie</b></label>
+        <select id="item_category_type">
+          <option v-for="cat in dostepne_kategorie" :value="cat.nazwaKategorii">
+            {{cat.nazwaKategorii}}
+          </option>
+        </select>
+
+        <div style="display: flex; padding: 5px">
+          <button @click="addCategory" class="registerbtnupdate">Dodaj</button>
+          <button @click="deleteCategory" class="registerbtnupdate">
+            Usuń
+          </button>
+        </div>
+        <p></p>
+        <div style="display: flex">
+          <div
+            v-for="zdjecie in przedmiot_zdjecia"
+            :key="zdjecie"
+            style="padding: 5px"
+          >
+            <img
+              :src="zdjecie"
+              class="item_photo"
+              style="width: 80px; height: 80px; margin: 5px"
+            />
+          </div>
+        </div>
+        <p></p>
+        <label for="zdjecia_przed"><b>Zdjecia przedmiotu:</b></label> <br />
+        <span v-for="zdjecie in przedmiot_zdjecia" :key="zdjecie.id">
+          {{zdjecie}} <br />
+        </span>
+        <p></p>
+        <label for="zdjecia"><b>Zdjęcia</b></label>
+        <input
+          class="reg_log_input"
+          type="text"
+          name="dodaj_zdjecie"
+          id="dodaj_zdjecie"
+          v-model="dodaj_zdjecie"
+          required
+        />
+        <div style="display: flex; padding: 5px">
+          <button @click="addImage" class="registerbtnupdate">Dodaj</button>
+          <button @click="deleteImage" class="registerbtnupdate">Usuń</button>
+        </div>
+        <p></p>
+        <label for="materialy_przed"
+          ><b>Materiały elektroniczne przedmiotu:</b></label
+        >
+        <br />
+        <span v-for="material in przedmiot_materialy" :key="material.id">
+          {{material}} <br />
+        </span>
+        <p></p>
+        <label for="materialyElektroniczne"
+          ><b>Materiały elektroniczne</b></label
+        >
+        <input
+          class="reg_log_input"
+          type="text"
+          name="dodaj_material"
+          id="dodaj_material"
+          v-model="dodaj_material"
+          required
+        />
+        <div style="display: flex; padding: 5px">
+          <button @click="addMaterial" class="registerbtnupdate">Dodaj</button>
+          <button @click="deleteMaterial" class="registerbtnupdate">
+            Usuń
+          </button>
+        </div>
+        <p></p>
+        <hr />
+        <button @click="goBack" class="registerbtn">Wstecz</button>
+      </div>
+    </div>
+
+    <script src="js/modyfing.js"></script>
+  </body>
+</html>

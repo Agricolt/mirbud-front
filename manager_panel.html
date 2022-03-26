@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- axios -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"
+      integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Panel admina</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="nav_bar">
+        <a href="index.html"><img src="img/logo_small.png" class="logo" /></a>
+
+        <div class="nav_bar_cart_and_user">
+          <div class="user"></div>
+          <a href="logowanie.html">
+            <button @click="logout" class="login_btn" type="button">
+              Wyloguj się
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <button @click="generate_raport" class="adminbtns">Generuj raport</button>
+      <button @click="add_category" class="adminbtns">
+        Dodaj/Usuń kategorię
+      </button>
+      <button @click="update_item" class="adminbtns">
+        Modyfikuj/Usuń przedmiot
+      </button>
+      <button @click="add_item" class="adminbtns">Dodaj przedmiot</button>
+
+      <iframe
+        target="frame"
+        id="frame"
+        title="Admin functionality"
+        width="100%"
+        height="550px"
+        src="rejestracja_Admin.html"
+      >
+      </iframe>
+    </div>
+    <script src="js/manager_panel.js"></script>
+  </body>
+</html>

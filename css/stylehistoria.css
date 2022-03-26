@@ -1,0 +1,47 @@
+.list_of_orders{
+	list-style: none;
+	width: 1000px;
+	margin-left: 100px;
+	margin-bottom: 100px;
+}
+
+.order_item{
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	margin-bottom: 25px;
+}
+
+.order_details{
+	margin-left: 10px;
+}
+
+.item_photo{
+	width: auto;
+	height: 200px;
+}
+
+.list_of_items_order{
+	list-style: none;
+}
+
+.item_of_order{
+	margin-left: 50px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	width: 800px;
+	height: 250px;
+}
+
+.order_item_details{
+	float: right;
+}
+
+.title{
+	margin-left: 20px;
+}
+
+.no_orders_text{
+	margin-left: 50px;
+}
